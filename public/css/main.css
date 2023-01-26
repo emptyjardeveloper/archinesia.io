@@ -6,6 +6,8 @@ body {
   margin: 0;
   font-family: "quicksand", sans-serif;
   background-color: #f0f4f7;
+  display: flex;
+  justify-content: center;
 }
 
 .container content .testimonial .swiper .swiper-slide, .container content .location-map .content-highlight .search-porter form, .container header .nav-content .text-content .content-cta {
@@ -32,6 +34,10 @@ body {
   align-items: center;
 }
 
+.container {
+  width: 100%;
+  max-width: 1300px;
+}
 .container header {
   display: flex;
   flex-direction: column;
@@ -61,7 +67,11 @@ body {
 }
 .container header nav ul li a:hover {
   transition: 0.5s;
-  color: #116dd0;
+  color: #f76110;
+}
+.container header nav ul li .selected {
+  color: #f76110;
+  font-weight: bolder;
 }
 .container header nav .nav-cta span {
   background-color: #1d1f21;
@@ -71,6 +81,12 @@ body {
 }
 .container header nav .nav-cta span a {
   color: #fafafa;
+}
+.container header nav .burger-menu {
+  display: none;
+}
+.container header nav .burger-menu i {
+  color: rgb(7, 18, 29);
 }
 .container header .nav-content {
   width: 100%;
@@ -161,6 +177,7 @@ body {
 }
 .container content .simple-ex .highlight {
   width: 200px;
+  background: none;
 }
 .container content .simple-ex .highlight h4 {
   font-size: 20px;
@@ -201,7 +218,7 @@ body {
   width: 50%;
   height: inherit;
   background: url(../images/background/location-map.png);
-  background-size: 450px;
+  background-size: 80%;
   background-repeat: no-repeat;
   background-position: left;
 }
@@ -255,7 +272,7 @@ body {
   width: 100%;
   padding: 10px 0;
   border: none;
-  background-color: none;
+  background-color: transparent;
   outline: none;
   font-size: 15px;
 }
@@ -282,7 +299,7 @@ body {
   width: 50%;
   height: inherit;
   background: url(../images/background/comunity.png);
-  background-size: 500px;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -340,6 +357,7 @@ body {
 .container content .testimonial h4 {
   font-size: 20px;
   color: rgb(7, 18, 29);
+  margin: 0 0 20px 0;
 }
 .container content .testimonial .swiper {
   width: 100%;
@@ -483,4 +501,275 @@ body {
   padding: 30px 0 0 0;
   color: #c0c8d8;
   font-size: 14px;
+}
+
+@media only screen and (max-width: 850px) {
+  .container header nav ul {
+    display: none;
+  }
+  .container header nav .nav-cta {
+    display: none;
+  }
+  .container header nav .burger-menu {
+    display: block;
+  }
+  .container header nav .burger-menu i {
+    color: rgb(7, 18, 29);
+  }
+  .container header .nav-content {
+    height: 400px;
+  }
+  .container header .nav-content .text-content {
+    background-image: none;
+  }
+  .container header .nav-content .text-content h2 {
+    width: 100%;
+  }
+  .container header .nav-content .text-content span {
+    width: 80%;
+  }
+  .container header .foot-nav {
+    font-size: 15px;
+  }
+  .container content .simple-ex .highlight {
+    width: 300px;
+    margin: 0 10px 0 0;
+  }
+  .container content .location-map .image-map {
+    width: 40%;
+  }
+  .container content .location-map .content-highlight {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .container header .nav-content {
+    height: 400px;
+  }
+  .container header .nav-content .text-content {
+    background-image: none;
+  }
+  .container header .nav-content .text-content h2 {
+    width: 100%;
+  }
+  .container header .nav-content .text-content span {
+    width: 80%;
+  }
+  .container header .foot-nav {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-wrap: wrap;
+    font-size: 15px;
+    background-position: 0 0;
+  }
+  .container header .foot-nav .foot-item {
+    width: 40%;
+    margin: 17px;
+  }
+  .container content .simple-ex {
+    flex-direction: column;
+  }
+  .container content .simple-ex .highlight {
+    width: 100%;
+    margin: 0 0 40px 0;
+    text-align: center;
+  }
+  .container content .simple-ex .highlight h4 {
+    font-size: 30px;
+  }
+  .container content .simple-ex .highlight span {
+    font-size: 17px;
+  }
+  .container content .simple-ex .step {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #f9fafb;
+    margin: 15px 0;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .container content .location-map {
+    margin: 100px 0 0 0;
+    flex-direction: column;
+    height: 500px;
+  }
+  .container content .location-map .image-map {
+    width: 100%;
+    background-position: center;
+  }
+  .container content .location-map .content-highlight {
+    margin: 20px 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .container content .location-map .content-highlight h4, .container content .location-map .content-highlight span {
+    width: 70%;
+  }
+  .container content .location-map .content-highlight h4 {
+    font-size: 30px;
+  }
+  .container content .location-map .content-highlight span {
+    font-size: 15px;
+  }
+  .container footer .content-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container footer .content-footer .mini-card {
+    width: 100%;
+    text-align: center;
+    display: inherit;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container footer .content-footer .mini-card img {
+    width: 250px;
+  }
+  .container footer .content-footer .mini-card span {
+    width: 70%;
+    font-size: 17px;
+  }
+  .container footer .content-footer .sitemap {
+    margin: 50px 0 0 0;
+    width: 100%;
+  }
+  .container footer .content-footer .sitemap ul {
+    display: inline-block;
+    width: 30%;
+  }
+  .container footer .content-footer .sitemap ul strong {
+    font-size: 20px;
+  }
+  .container footer .content-footer .sitemap ul li a {
+    font-size: 17px;
+  }
+  .container footer .content-footer .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container header {
+    width: 100%;
+  }
+  .container header .nav-content {
+    height: 500px;
+  }
+  .container header .nav-content .text-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container header .nav-content .text-content h2 {
+    font-size: 50px;
+  }
+  .container header .nav-content .text-content span {
+    display: block;
+    margin: 20px 0 0 0;
+    width: 80%;
+  }
+  .container header .foot-nav .foot-item {
+    width: 100%;
+  }
+  .container content .simple-ex .step {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #f9fafb;
+    margin: 15px 0;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .container content .location-map .content-highlight {
+    width: 100%;
+  }
+  .container content .location-map .content-highlight h4, .container content .location-map .content-highlight span {
+    width: 100%;
+  }
+  .container content .location-map .content-highlight h4 {
+    font-size: 20px;
+  }
+  .container content .location-map .content-highlight .search-porter form {
+    flex-direction: column;
+  }
+  .container content .location-map .content-highlight .search-porter form .form-search {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .container content .location-map .content-highlight .search-porter form .form-search i {
+    font-size: 20px;
+    width: 30px;
+  }
+  .container content .location-map .content-highlight .search-porter form .form-search div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .container content .location-map .content-highlight .search-porter form search {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+  }
+  .container content .location-map .content-highlight .search-porter form search::after {
+    content: "Search";
+    position: relative;
+    margin: 0 0 0 10px;
+    font-size: 15px;
+    text-transform: lowercase;
+  }
+  .container content .comunity-services {
+    margin: 100px 0 0 0;
+    flex-direction: column;
+    height: 400px;
+  }
+  .container content .comunity-services .image-map {
+    margin: 30px 0 0 0;
+    width: 100%;
+  }
+  .container content .comunity-services .content-highlight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .container content .comunity-services .content-highlight h4, .container content .comunity-services .content-highlight span {
+    width: 100%;
+  }
+  .container content .testimonial {
+    margin: 100px 0 0 0;
+  }
+  .container content .testimonial h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 0 0 20px 0;
+  }
+  .container footer .content-footer .sitemap {
+    flex-direction: column;
+  }
+  .container footer .content-footer .sitemap ul {
+    text-align: center;
+    width: 100%;
+    margin: 40px 0 0 0;
+  }
 }/*# sourceMappingURL=main.css.map */

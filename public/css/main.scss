@@ -18,6 +18,8 @@ body {
     margin: 0;
     font-family: 'quicksand', sans-serif;
     background-color: $lightColor;
+    display: flex;
+    justify-content: center;
 }
 
 %lightGradient{
@@ -44,6 +46,8 @@ body {
 }
 
 .container{
+    width: 100%;
+    max-width: 1300px;
     & header{
         display:flex;
         flex-direction:column;
@@ -72,7 +76,12 @@ body {
 
                     & a:hover{
                         transition:0.5s;
-                        color: $mainHover;
+                        color: $difColor;
+                    }
+
+                    & .selected{
+                        color: $difColor;
+                        font-weight:bolder;
                     }
                 }
             }
@@ -86,6 +95,13 @@ body {
                     & a{
                         color: $fontColorLight;
                     }
+                }
+            }
+
+            & .burger-menu{
+                display: none;
+                & i{
+                    color: $fontColorDark;
                 }
             }
         }
@@ -186,6 +202,7 @@ body {
             @extend %between;
             & .highlight{
                 width: 200px;
+                background:none;
                 & h4{
                     font-size:20px;
                     color: $fontColorDark;
@@ -231,7 +248,7 @@ body {
                 width:50%;
                 height:inherit;
                 background:url(../images/background/location-map.png);
-                background-size:450px;
+                background-size:80%;
                 background-repeat:no-repeat;
                 background-position:left;
             }
@@ -289,7 +306,7 @@ body {
                                     width: 100%;
                                     padding: 10px 0;
                                     border: none;
-                                    background-color: none;
+                                    background-color: transparent;
                                     outline:none;
                                     font-size: 15px;
                                 }
@@ -326,7 +343,7 @@ body {
                 width:50%;
                 height:inherit;
                 background:url(../images/background/comunity.png);
-                background-size:500px;
+                background-size:100%;
                 background-repeat:no-repeat;
                 background-position:right;
             }
@@ -389,6 +406,7 @@ body {
             & h4{
                 font-size: 20px;
                 color: $fontColorDark;
+                margin:0 0 20px 0;
             }
 
             & .swiper {
@@ -452,7 +470,7 @@ body {
                 }
             }
         }
-    }
+    } 
 
     & footer{
         padding:50px 0;
@@ -547,6 +565,351 @@ body {
             padding:30px 0 0 0;
             color: $softFontColor;
             font-size:14px;
+        }
+    }
+}
+
+@media only screen and (max-width:850px){
+    .container{
+        & header{
+            & nav{
+                & ul{
+                    display: none;
+                }
+
+                & .nav-cta{
+                    display: none;
+                }
+
+                & .burger-menu{
+                    display: block;
+                    & i{
+                        color: $fontColorDark;
+                    }
+                }
+            }
+
+            & .nav-content{
+                height: 400px;
+                & .text-content{
+                    background-image: none;
+                    & h2{
+                        width:100%;
+                    }
+
+                    & span{
+                        width: 80%;
+                    }
+                }
+            }
+
+            & .foot-nav{
+                font-size: 15px;
+            }
+        }
+
+        & content{
+            & .simple-ex{
+                & .highlight{
+                    width: 300px;
+                    margin:0 10px 0 0;
+                }
+            }
+
+            & .location-map{
+                & .image-map{
+                    width: 40%;
+                }
+
+                & .content-highlight{
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:750px){
+    .container{
+        & header{
+            & .nav-content{
+                height: 400px;
+                & .text-content{
+                    background-image: none;
+                    & h2{
+                        width:100%;
+                    }
+
+                    & span{
+                        width: 80%;
+                    }
+                }
+            }
+
+            & .foot-nav{
+                height: fit-content;
+                flex-wrap: wrap;
+                font-size: 15px;
+                background-position: 0 0;
+                & .foot-item{
+                    width: 40%;
+                    margin: 17px;
+                }
+            }
+        }
+
+        & content{
+            & .simple-ex{
+                flex-direction: column;
+                & .highlight{
+                    width: 100%;
+                    margin:0 0 40px 0;
+                    text-align: center;
+                    & h4{
+                        font-size: 30px;
+                    }
+
+                    & span{
+                        font-size: 17px;
+                    }
+                }
+
+                & .step{
+                    width: 60%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    background: #f9fafb;
+                    margin: 15px 0;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                }
+            }
+
+            & .location-map{
+                margin: 100px 0 0 0;
+                flex-direction: column;
+                height: 500px;
+                & .image-map{
+                    width: 100%;
+                    background-position: center;
+                }
+
+                & .content-highlight{
+                    margin: 20px 0 0 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    text-align: center;
+                    & h4, span{
+                        width: 70%;
+                    }
+
+                    & h4{
+                        font-size:30px;
+                    }
+
+                    & span{
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        & footer{
+            & .content-footer{
+                flex-direction: column;
+                align-items: center;
+                & .mini-card{
+                    width: 100%;
+                    text-align: center;
+                    display:inherit;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & img{
+                        width: 250px;
+                    }
+
+                    & span{
+                        width: 70%;
+                        font-size: 17px;
+                    }
+                }
+
+                & .sitemap{
+                    margin: 50px 0 0 0;
+                    width: 100%;
+                    & ul{
+                        display: inline-block;
+                        width: 30%;
+                        & strong{
+                            font-size: 20px;
+                        }
+                        & li{
+                            & a{
+                                font-size: 17px;
+
+                            }
+                        }
+                    }
+                }
+
+                & .contact-info{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    margin: 50px 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:500px){
+    .container{
+        & header{
+            width: 100%;
+            & .nav-content{
+                height: 500px;
+                & .text-content{
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    & h2{
+                        font-size: 50px;
+                    }
+
+                    & span{
+                        display: block;
+                        margin: 20px 0 0 0;
+                        width: 80%;
+                    }
+                }
+            }
+
+            & .foot-nav{
+                & .foot-item{
+                    width:100%;
+                }
+            }
+        }
+
+        & content{
+            & .simple-ex{
+                & .step{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    background: #f9fafb;
+                    margin: 15px 0;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                }
+            }
+
+            & .location-map{
+                & .content-highlight{
+                    width: 100%;
+                    & h4, span{
+                        width: 100%;
+                    }
+
+                    &  h4{
+                        font-size: 20px;
+                    }
+
+                    & .search-porter{
+                        & form{
+                            flex-direction: column;
+                            & .form-search{
+                                width: 100%;
+                                height: 100px;
+                                display: flex;
+                                justify-content: flex-start;
+                                & i{
+                                    font-size: 20px;
+                                    width: 30px;
+                                }
+
+                                & div{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    width: 100%;
+                                }
+                            }
+
+                            & search{
+                                width:100%;
+                                border-radius:0;
+                                position: relative;
+                            }
+
+                            & search::after{
+                                content:'Search';
+                                position: relative;
+                                margin: 0 0 0 10px;
+                                font-size: 15px;
+                                text-transform: lowercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .comunity-services{
+                margin: 100px 0 0 0;
+                flex-direction: column;
+                height: 400px;
+                & .image-map{
+                    margin: 30px 0 0 0;
+                    width: 100%;
+                }
+
+                & .content-highlight{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items:center;
+                    text-align:center;
+                    & h4, span{
+                        width: 100%;
+                    }
+                }
+            }
+
+            & .testimonial{
+                margin: 100px 0 0 0;
+                & h4{
+                    text-align: center;
+                    font-size: 25px;
+                    margin: 0 0 20px 0 ;
+                }
+            }
+        }
+
+        & footer{
+            & .content-footer{
+                & .sitemap{
+                    flex-direction: column;
+                    & ul{
+                        text-align: center;
+                        width: 100%;
+                        margin: 40px 0 0 0;
+                    }
+                }
+            }
         }
     }
 }
